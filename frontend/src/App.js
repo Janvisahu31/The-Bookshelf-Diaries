@@ -5,6 +5,9 @@ import Header from './components/Header';
 import ReviewList from './components/ReviewList';
 import ReviewDetail from './components/ReviewDetail';
 import AddReview from './components/AddReview';
+import Sidebar from './components/Sidebar';
+import Login from './components/Login';
+import Home from './components/Home';
 
 function App() {
   const [reviews, setReviews] = useState([
@@ -19,12 +22,21 @@ function App() {
 
   return (
     <Router>
+    <div className="flex">
+    <Sidebar />
+    <div className="flex-1">
       <Header />
+      <div className="p-4">
       <Routes>
-        <Route path="/" element={<ReviewList reviews={reviews} />} />
+        <Route path="/review" element={<ReviewList reviews={reviews} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/reviews/:id" element={<ReviewDetail reviews={reviews} />} />
         <Route path="/add-review" element={<AddReview addReview={addReview} />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
+      </div>
+      </div>
+      </div>
     </Router>
   );
 }
