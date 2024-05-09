@@ -9,7 +9,7 @@ function AddReview({ addReview }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addReview({ title, author, content });
+    addReview({ title,booktitle, author, content });
     setTitle('');
     setBookTitle('');
     setAuthor('');

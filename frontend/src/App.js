@@ -8,6 +8,8 @@ import AddReview from './components/AddReview';
 import Sidebar from './components/Sidebar';
 import Login from './components/Login';
 import Home from './components/Home';
+import { AuthProvider } from './context/AuthContext';
+
 
 function App() {
   const [reviews, setReviews] = useState([
@@ -21,6 +23,7 @@ function App() {
   };
 
   return (
+    <AuthProvider>
     <Router>
     <div className="flex">
     <Sidebar />
@@ -38,6 +41,7 @@ function App() {
       </div>
       </div>
     </Router>
+    </AuthProvider>
   );
 }
 
